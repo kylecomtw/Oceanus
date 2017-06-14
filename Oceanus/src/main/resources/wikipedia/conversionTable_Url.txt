@@ -1,0 +1,5 @@
+# Retreieved on 20140506
+
+http://zh.wikipedia.org/wiki/MediaWiki:Conversiontable/zh-tw
+http://zh.wikipedia.org/wiki/MediaWiki:Conversiontable/zh-hant
+http://svn.wikimedia.org/svnroot/mediawiki/trunk/phase3/includes/ZhConversion.php

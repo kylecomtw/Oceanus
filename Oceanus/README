@@ -1,0 +1,17 @@
+Download following files from StanfordCoreNLP website:
+https://stanfordnlp.github.io/CoreNLP/
+
+CoreNLP
+Chinese Model
+
+* install CoreNLP
+in CoreNLP directory:
+mvn install
+  - You might need to manually overwrite stanford-corenlp-x.x.x.jar in
+    repository
+  - Also, copy *-sources.jar to repo folder
+
+* Manually install CoreNLP and Chinese model files
+mvn install:install-file -Dfile=stanford-corenlp-3.8.0-models.jar -DgroupId=edu.stanford.nlp -DartifactId=stanford-corenlp-model -Dversion=3.8.0 -Dpackaging=jar -DgeneratePom=True
+mvn install:install-file -Dfile=stanford-chinese-corenlp-2017-06-09-models.jar -DgroupId=edu.stanford.nlp -DartifactId=stanford-corenlp-chinese-model -Dversion=3.8.0 -Dpackaging=jar -DgeneratePom=True
+
