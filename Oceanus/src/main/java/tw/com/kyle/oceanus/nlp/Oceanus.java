@@ -124,7 +124,7 @@ public class Oceanus {
         Annotation annotation = new Annotation(in_text);
         
         if (s_segmenter == null) {
-        Properties props = new Properties();
+            Properties props = new Properties();
             try {
                 // InputStream is = Oceanus.class.getResourceAsStream("/ChineseProp.properties");
                 InputStream is = Oceanus.class.getClassLoader().getResourceAsStream("zh-seg.properties");

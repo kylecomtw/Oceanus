@@ -97,7 +97,14 @@ public class ParsedSentence {
     }
     
     public List<Mention> Mentions() {
-        List<Mention> mentions = annot.get(CorefCoreAnnotations.CorefMentionsAnnotation.class);
+        Class corefMenClazz = CorefCoreAnnotations.CorefMentionsAnnotation.class;
+        List<Mention> mentions = null;
+        if (annot.containsKey(corefMenClazz)) {
+            mentions = annot.get(CorefCoreAnnotations.CorefMentionsAnnotation.class);
+        } else {
+            mentions = new ArrayList<>();
+        }
+            
         return mentions;
     }
     
@@ -122,9 +129,13 @@ public class ParsedSentence {
     }
     
     private <T> List<T> collect_token_data(Class<? extends Key<T>> annot_class) {
-        return annot.get(CoreAnnotations.TokensAnnotation.class).stream()
+        if (annot.containsKey(CoreAnnotations.TokensAnnotation.class)){
+            return annot.get(CoreAnnotations.TokensAnnotation.class).stream()
                 .map((x)->x.get(annot_class))
                 .collect(Collectors.toList());
+        } else {
+            return new ArrayList<>();
+        }
     }
     
     private <T> void update_token_data(int word_i, Class<? extends Key<T>> annot_class, T val) {
@@ -268,15 +279,14 @@ public class ParsedSentence {
     }
     
     public JsonArray GetMentionObjects(){        
-        JsonArray jarr = new JsonArray();
-        List<CoreMap> xs = annot.get(CoreAnnotations.MentionsAnnotation.class);
+        JsonArray jarr = new JsonArray();        
         for (Mention m: Mentions()){
             JsonObject m_obj = new JsonObject();
             m_obj.addProperty("word", mention_to_string(m));
             m_obj.addProperty("id", m.mentionID);
             m_obj.addProperty("animacy", m.animacy.name());
-            m_obj.addProperty("start_index", m.startIndex - 1);
-            m_obj.addProperty("end_index", m.endIndex - 1);
+            m_obj.addProperty("start_index", m.startIndex);
+            m_obj.addProperty("end_index", m.endIndex);
             m_obj.addProperty("isSubject", m.isSubject);
             m_obj.addProperty("isDObj", m.isDirectObject);
             m_obj.addProperty("isIObj", m.isIndirectObject);
