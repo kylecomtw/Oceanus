@@ -54,9 +54,9 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
+                    <descriptors>
+                        <descriptor>oceanus-jar-with-dep.xml</descriptor>
+                    </descriptors>
                 </configuration>
             </plugin>
         </plugins>

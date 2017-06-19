@@ -50,6 +50,7 @@
             <actionName>CUSTOM-jar-with-dep</actionName>
             <displayName>jar-with-dep</displayName>
             <goals>
+                <goal>package</goal>
                 <goal>assembly:single</goal>
             </goals>
         </action>

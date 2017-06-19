@@ -14,8 +14,8 @@
       <unpack>true</unpack>
       <scope>runtime</scope>
       <excludes>
-        <exclude>stanford-corenlp-chinese-model</exclude>
-        <exclude>stanford-corenlp-model</exclude>
+        <exclude>edu.stanford.nlp:stanford-corenlp-chinese-model</exclude>
+        <exclude>edu.stanford.nlp:stanford-corenlp-model</exclude>
       </excludes>
     </dependencySet>
   </dependencySets>
