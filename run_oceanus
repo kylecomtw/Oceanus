@@ -1,4 +1,4 @@
 BASEPATH=`readlink -f $(dirname $0)`
 cd $BASEPATH
-java -Xmx4G -cp Oceanus-0.2-jar-with-dependencies.jar:stanford-corenlp-model-3.8.0.jar:stanford-corenlp-chinese-model-3.8.0.jar tw.com.kyle.oceanus.nlp.SparkMain
+java -Xmx4G -cp Oceanus-0.2-jar-with-dependencies.jar:stanford-corenlp-3.8.0-models.jar:stanford-chinese-corenlp-3.8.0-models.jar tw.com.kyle.oceanus.nlp.SparkMain
 
