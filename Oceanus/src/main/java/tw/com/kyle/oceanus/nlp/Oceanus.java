@@ -207,7 +207,7 @@ public class Oceanus {
     }
     
     private static void test_stanford(String in_path) throws IOException {
-        String intxt = "海馬颱風路徑怎麼走，一張圖告訴你。";
+        String intxt = "魟魚颱風路徑怎麼走，一張圖告訴你。";
         // String intxt = "海马台风路径怎么走，一张图告诉你。气象局预估，明日下午发布海马台风海警。";
         String in_text = "";
         if (in_path.length() > 0 && Files.exists(Paths.get(in_path))){

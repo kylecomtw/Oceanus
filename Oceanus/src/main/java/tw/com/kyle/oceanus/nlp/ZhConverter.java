@@ -216,6 +216,12 @@ public class ZhConverter {
                 Matcher m = u_pat.matcher(valcp);
                 ArrayList<String> valcp_list = new ArrayList<>();
                 while (m.find()) {
+                    String valcp_x = m.group(1);
+                    if (valcp_x.length() > 4) {
+                        Logger.getLogger(ZhConverter.class.getName())
+                            .log(Level.WARNING, "Ignore codepoint not in BMP");
+                        continue;                        
+                    }
                     valcp_list.add(m.group(1));                    
                 }
                 
